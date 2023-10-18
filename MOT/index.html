@@ -1,0 +1,81 @@
+<!-- ################################################################# -->
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+   <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+   <link href='styles/styles.css' rel='stylesheet' type='text/css'>
+   <script src="https://visualgame.oss-cn-shenzhen.aliyuncs.com/games/vue.js"></script>
+   <script src='https://visualgame.oss-cn-shenzhen.aliyuncs.com/games/jquery.min.js' async></script>
+   <script src='https://visualgame.oss-cn-shenzhen.aliyuncs.com/games/preloadjs.min.js' async></script>
+   <script src='../common/loadcommon.js' async></script>
+   <script src='scripts/mainprogram.js' async></script>
+   <link rel="shortcut icon" href="https://visualgame.oss-cn-shenzhen.aliyuncs.com/games/favicon.ico" />
+    
+</head>
+<body>
+	
+        
+		<div id="supportive_container" v-bind:style="{width: container_width, height: container_height, top: top_gap, left: left_gap}" v-show='show_supportive' v-cloak>
+			<img div id="logo_area1" v-bind:src="title_url" v-bind:style="{width: container_width, height:title_height}" v-show='show_logo' v-cloak />
+			<img div id="image_area" v-bind:src="image_url" v-bind:style="{width: container_width}" v-show='show_image' v-cloak />
+			<div id="text_area" v-bind:style="{width: container_width, maxHeight: text_max_height, fontSize: input_font_size}" v-show='show_text' v-html="text_content" v-cloak ></div>
+			
+			<div class="input_area" v-bind:style="{width: information_width, fontSize: input_font_size}" v-show='show_input' v-cloak >
+
+			输入新玩家ID：
+			<br />
+			<input type="text" id='input-id' v-bind:style="{fontSize: input_font_size}" v-model='player_ID' v-cloak>
+			<br />
+			<br />
+			<div id="input_info" v-bind:style="{fontSize: input_font_size}" v-cloak >出生年月日</div>
+
+
+			  <select id='input-year' v-model='year' v-bind:style="{fontSize: input_font_size}" required='required' v-cloak> <!-- 年龄选框元素 -->
+			    <option v-for='(item, i) in years' :value='item' :id='i + 1' v-cloak>{{item}}</option> <!-- 年龄选项 -->
+			  </select>
+			  <label for='label-year' v-cloak>年</label> <!-- 年龄 -->
+							
+
+			  <select id='input-month' v-model='month' v-bind:style="{fontSize: input_font_size}" required='required' v-cloak> <!-- 年龄选框元素 -->
+			    <option v-for='(item, i) in months' :value='item' :id='i + 1' v-cloak>{{item}}</option> <!-- 年龄选项 -->
+			  </select>
+			  <label for='label-month' v-cloak>月</label> <!-- 年龄 -->	
+						
+
+			  <select id='input-day' v-model='day' v-bind:style="{fontSize: input_font_size}" required='required' v-cloak> <!-- 年龄选框元素 -->
+			    <option v-for='(item, i) in days' :value='item' :id='i + 1' v-cloak>{{item}}</option> <!-- 年龄选项 -->
+			  </select>
+			  <label for='label-day' v-cloak>日</label> <!-- 年龄 -->
+			  <br />
+			  <label for='label-gender' v-cloak>性别</label> <!-- 性别 -->
+			  <select id='input-gender' v-model='gender' v-bind:style="{fontSize: input_font_size}" required='required' v-cloak> <!-- 性别选框元素 -->
+			    <option id='input-genderOption' value='0' v-cloak>女</option> <!-- 性别选项，下同 -->
+			    <option id='input-genderOption' value='1' v-cloak>男</option>
+			  </select>
+			 <br />			
+			 </div>
+
+			 
+			<button div class="button_area" onclick="clickbutton()" v-bind:style="{top: button_top, left: button_left, width: button_width}" v-show='show_button' v-cloak >{{button_content}}</button>			
+		</div>
+
+		
+		<div id="stimuli_container" v-bind:style="{width: container_width, top: top_gap, left: left_gap}" v-show='show_trial' v-cloak>
+			
+			<div id="lower_cover" v-bind:style="{width: container_width, height: information_height}" v-cloak>
+			<div id="lower_text" v-bind:style="{fontSize: info_font_size}" v-html="game_info_content" v-cloak></div>
+			</div>
+						
+			<div id="item_cover" v-bind:style="{width: container_width, height: container_width}" v-cloak>
+			<img  div class='item' v-for="item_choice,index in pics" v-bind:src="files[pics[index]]" v-bind:style="{width: item_width , top: item_top[index], left: item_left[index]}" v-show='show_item[index]' v-on:click="imageclick" :id='index' v-cloak />
+			</div>
+			
+			<div id="button_cover" v-bind:style="{width: container_width, height: information_height}" v-cloak>
+			</div>	
+
+        </div>
+
+</body>
+</html>

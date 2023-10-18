@@ -1,0 +1,87 @@
+/*#############*/
+
+html{
+  background-color: #EDEDED;
+  font-family: '微软雅黑', sans-serif;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+body{
+  margin: 0;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+
+#supportive_container{
+  background-color: white;
+  position:absolute;
+  }
+ 
+#text_area{
+	overflow: scroll;
+	padding: 20px;
+	box-sizing: border-box; 
+}
+
+.button_area{
+	font-size: 20px;
+	position: absolute;
+	font-family: '微软雅黑', sans-serif;
+    color: black;
+    padding: 1.5vmin 3vmin 1.6vmin;
+    background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#DABF8A),
+		to(#DABF8A));
+	background: linear-gradient(
+		top,
+		#DABF8A 0%,
+		#DABF8A);
+    border-radius: 1vmin;
+    border: 1px solid #DABF8A;
+	box-shadow:
+		0px 5px 5px gray,
+    inset 0px -3px 0px #CAAF7A;
+	text-shadow:
+		0px -1px 1px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.input_area {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#stimuli_container{
+  background-color: #F7CB66;
+  position:absolute;
+  }
+ 
+#item_cover{
+    font-size:0;
+	background-size: contain;
+	position: relative;
+  }
+  
+#lower_information{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F7CB66;
+  }
+
+#lower_text {
+text-align: center;
+line-height: 1;
+}
+
+#button_cover, #lower_cover {
+background-color: lightgoldenrodyellow;
+}
+
+.item{
+  position: absolute;
+}
