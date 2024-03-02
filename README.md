@@ -18,4 +18,6 @@ For an insight into the implementation, open the file MOT\scripts\mainprogram.js
 -Max ring radius is capped at 100, that’s not enough
 -Would blurring the segments help?
 
-11th of october and 19th July and 5th July
+## Experiment ideas
+
+See this [old repository](https://github.com/alexholcombe/MOTjavascript)
